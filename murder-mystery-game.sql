@@ -150,5 +150,30 @@ Result:
 Morty Schapiro	I heard a gunshot and then saw a man run out. He had a "Get Fit Now Gym" bag. The membership number on the bag started with "48Z". Only gold members have those bags. The man got into a car with a plate that included "H42W".
 Annabel Miller	I saw the murder happen, and I recognized the killer from my gym when I was working out last week on January the 9th.
 
+  SELECT * FROM get_fit_now_member;
+SELECT * FROM get_fit_now_member
+WHERE membership_status= 'gold'; (long list)
+
+SELECT * FROM drivers_license
+WHERE plate_number= 'H42W'; (No data returned)
+
+SELECT * FROM get_fit_now_member
+WHERE membership_status= 'gold'
+AND id LIKE '48Z%';
+
+Two results returned:
+
+Joe Germuska
+Jeremy Bowers
+
+INSERT INTO solution VALUES (1, 'Jeremy Bowers');
+        
+        SELECT value FROM solution;
+
+FINAL RESULT:
+
+Congrats, you found the murderer! But wait, there's more... If you think you're up for a challenge, try querying the interview transcript of the murderer to find the real villain behind this crime. If you feel especially confident in your SQL skills, try to complete this final step with no more than 2 queries. Use this same INSERT statement with your new suspect to check your answer.
+
+
 
 
