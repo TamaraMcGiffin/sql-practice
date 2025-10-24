@@ -36,3 +36,44 @@ WHERE crime_scene_id = 55;
 
 7	55	NULL
 65	55	NULL
+
+SELECT clue FROM witnesses
+WHERE crime_scene_id = 65;
+
+I saw a man wearing a red bandana rushing out of the store.
+The main thing I remember is that he had a distinctive gold watch on his wrist.
+
+SELECT name, bandana_color, accessory
+FROM suspects
+WHERE bandana_color = 'red' AND accessory = 'gold watch';
+  
+Tony Ramirez	red	gold watch
+Mickey Rivera	red	gold watch
+Rico Delgado	red	gold watch
+
+SELECT id, name, bandana_color, accessory
+FROM suspects
+WHERE bandana_color = 'red' AND accessory = 'gold watch';
+  
+35	Tony Ramirez	red	gold watch
+44	Mickey Rivera	red	gold watch
+97	Rico Delgado	red	gold watch
+
+
+SELECT suspect_id, transcript
+FROM interviews
+WHERE suspect_id = 35 OR suspect_id = 44 OR suspect_id = 97;
+
+35	I wasn't anywhere near West Hollywood Records that night.
+44	I was busy with my music career; I have nothing to do with this theft.
+97	I couldn't help it. I snapped and took the record.
+
+
+ANSWER: Rico Delgado  
+
+Case Solved!
+Excellent work, detective! Rico Delgado has confessed to stealing the prized vinyl record.
+
+Case Explanation
+You began by querying the 'crime_scene' table with the date (19830715) and location (West Hollywood Records) to find the incident report. Then, you retrieved the two witness records from the 'witnesses' table, which revealed that: • The suspect wore a red bandana. • The suspect had a distinctive gold watch. Next, you queried the 'suspects' table, and there were 3 suspects matching the clues. Finally, you found the confession from Rico Delgado in the 'interviews' table.
+  
